@@ -1,0 +1,244 @@
+.all-stories-page {
+  min-height: 100vh;
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+.all-stories-header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  padding: 4rem 0 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.all-stories-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 25% 60%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 75% 40%, rgba(74, 144, 226, 0.05) 0%, transparent 50%);
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.all-stories-header h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #4a90e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.all-stories-header p {
+  font-size: 1.3rem;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.search-filter-section {
+  background-color: #1a1a1a;
+  padding: 2rem 0;
+  border-bottom: 1px solid #333333;
+}
+
+.search-filter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999999;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: #2a2a2a;
+  border: 2px solid #3a3a3a;
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.search-input::placeholder {
+  color: #999999;
+}
+
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+.sort-box label {
+  color: #cccccc;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sort-select {
+  padding: 0.75rem 1rem;
+  background-color: #2a2a2a;
+  border: 2px solid #3a3a3a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  min-width: 150px;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.sort-select option {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.results-info {
+  background-color: #0f0f0f;
+  padding: 1.5rem 0;
+}
+
+.results-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.results-text {
+  color: #999999;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.loading-section,
+.error-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #333333;
+  border-top: 3px solid #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-section {
+  color: #ff6b6b;
+  font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .all-stories-header {
+    padding: 3rem 0 2rem;
+  }
+  
+  .all-stories-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .all-stories-header p {
+    font-size: 1.2rem;
+  }
+  
+  .search-filter-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  
+  .search-box {
+    min-width: auto;
+  }
+  
+  .sort-box {
+    justify-content: space-between;
+  }
+  
+  .sort-select {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .all-stories-header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-filter-container {
+    padding: 0 1rem;
+  }
+  
+  .results-container {
+    padding: 0 1rem;
+  }
+  
+  .search-input {
+    font-size: 0.9rem;
+  }
+  
+  .sort-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

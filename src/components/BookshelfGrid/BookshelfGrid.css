@@ -1,0 +1,110 @@
+.bookshelf-section {
+  padding: 3rem 0;
+  background-color: #0f0f0f;
+}
+
+.bookshelf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.bookshelf-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.bookshelf-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #4a90e2;
+  border-radius: 2px;
+}
+
+.bookshelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+}
+
+/* Bookshelf effect - optional decorative elements */
+.bookshelf-grid::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, 
+    #8B4513 0%, 
+    #A0522D 25%, 
+    #CD853F 50%, 
+    #A0522D 75%, 
+    #8B4513 100%
+  );
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+}
+
+.bookshelf-grid::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, 
+    #8B4513 0%, 
+    #A0522D 25%, 
+    #CD853F 50%, 
+    #A0522D 75%, 
+    #8B4513 100%
+  );
+  border-radius: 4px;
+  box-shadow: 0 -2px 8px rgba(139, 69, 19, 0.3);
+}
+
+.no-books {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #999999;
+  font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .bookshelf-container {
+    padding: 0 1rem;
+  }
+  
+  .bookshelf-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .bookshelf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookshelf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .bookshelf-title {
+    font-size: 1.6rem;
+  }
+}
